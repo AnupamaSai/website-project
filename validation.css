@@ -1,0 +1,43 @@
+body{
+	height: 1080px;
+	width: 100%;
+	background-color:#F3F3F3;
+}
+.container{
+	position: relative;
+	padding: 10px 10px 100px 10px;
+	background-color: #FFD;
+	box-shadow: 2px 5px 3px 3px rgb(200, 200, 200);
+}
+#first,#last,#middle,#full,#mobile,#mail,#pswd{
+    height: 30px;
+    width: 250px;
+    border: 3px solid steelblue;
+    border-radius: 10px;
+    font-family: cursive;
+    box-shadow: 2px 5px 3px 3px rgb(207, 207, 207);
+}
+label{
+    font-family: 'Gill Sans';
+    font-size: 1.5rem;
+    margin-right: auto;
+}
+#gender{
+    border: 2px solid black;
+}
+.button{
+    height: 30px;
+    width: 100px;
+    margin-left: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #f0f8ff;
+    font-size: 1.2rem;
+    border-radius: 3px;
+    border: 1px solid thistle;
+}
+.button:hover{
+    box-shadow: 0px 0px 5px 3px rgb(185, 176, 176);
+    cursor: pointer;
+    background-color: cornflowerblue;
+    color: white;
+}

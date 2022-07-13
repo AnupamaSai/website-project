@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="validation.css">
+	<title>Form validation</title>
+	<style type="text/css">
+		div{
+			background-color: #555;
+			width: 800px;
+		}
+	</style>
+	<script type="text/javascript">
+		function validate(){
+			var fn=document.getElementById("first").value;
+			var sn=document.getElementById("middle").value;
+			var mn=document.getElementById("mobile").value;
+			var c1=document.getElementById("c1").checked;
+			alert("Do you want to submit?");
+			if(fn.length<4)
+			{
+				//alert("invalid");
+				document.getElementById("first").style.border="5px solid red";
+				document.getElementById("l").style.visibility="visible";
+				return false;
+			}
+		}
+		function sp(){
+			var s1=document.getElementById("sp").checked;
+			if(s1)
+			{
+               	 document.getElementById("pswd").type="text";
+			}
+			else{
+				document.getElementById("pswd").type="password";
+			}
+		}
+		function change()
+		{
+			document.getElementById("i").src="8.jpg";
+		}
+		function unchange()
+		{
+			document.getElementById("i").src="1.jpg";
+		}
+		function cb()
+		{
+			document.getElementById('sp')
+		}
+		function (display) {
+			var v=document.getElementById("first").value;
+			document.getElementById("first").value=document.getElementById('first').value
+		}
+	</script>
+</head>
+<body>
+      <center><div class="container">
+      	
+      	<form action="/jk.php" method="post" onsubmit="return validate();">
+      	<table>
+      		<h1><b>Registration Form</b></h1>
+      		<tr>
+      			<td><label>First  Name</label></td>
+      			<td><input type="text"  id="first" required></td>
+      		</tr><label id="l" style="color:red;visibility:hidden"> * atleast 3 letters are required</label>
+      		<tr>
+      			<td><label>Last Name</label></td>
+      			<td><input type="text" id="last" required></td>
+      		</tr>
+      		<tr>
+      			<td><label>Middle Name</label></td>
+      			<td><input type="text"  id="middle"></td>
+      		</tr>
+      		<tr>
+      			<td><label>Full Name</label></td>
+      			<td><input type="text"  id="full" readonly></td>
+      		</tr>
+      		<tr>
+                        <td><label for="country">Country</label></td>
+                        <td>India<input name="country" type="radio" id="country-india" value="india">
+                        USA<input onchange="whatcountry" name="country" type="radio" id="country-usa" value="usa">
+                        </td>
+                  </tr>
+                  <tr><td></td></tr>
+                  <tr>
+      			<td><label>Mobile number</label></td>
+      			<td><input type="number" id="mobile" required></td></tr><label id="m" style="color:red;visibility:hidden"> * </label>
+      		</tr>
+                  <tr>
+      			<td><label>E-Mail</label> </td>
+      			<td><input type="mail" name="mail" id="mail" required></td>
+      		</tr>
+      		<tr>
+      			<td><label>Password</label></td>
+      			<td><input type="password"  id="pswd"> <label id="l " style="color:red;visibility:hidden"> * </label></td>
+      		</tr>
+      		<tr>
+            		<td><label>Show Password</label></td>
+            		<td><input type="checkbox" id="sp" onclick="sp();"></td>
+            	</tr>
+      		<tr>
+      			<td><label>Gender</label></td>
+      			<td>
+      				<fieldset>
+      					<legend><lable>Gender</lable></legend>
+      					<input type="radio" name="gender" value="male" id="male"><label>Male</label>
+      					<input type="radio" name="gender" value="female" id="female"><label>Female</label>
+      					<input type="radio" name="gender" value="other" id="female"><label>Other</label>
+      				</fieldset>
+      			</td>
+      		</tr>
+      		<tr><td><label>Branch</label></td><td>CSE<input type="checkbox" id="c1">
+      			ECE<input type="checkbox" id="c2">
+      			MEC<input type="checkbox"  id="c3">
+      			</td>
+			</tr>
+			<tr>
+                        <td> <label for="color">Color</label></td>
+                        <td><input id="color" onmouseleave="defaultback()" onmouseenter="changecolor()" type="color"></td>
+                    </tr> 
+                  <tr>
+                  	<td><label>Attach file</label></td>
+                  	<td><input type="file" name="file" id="File"></td>
+                  </tr>
+            	
+            	<tr>
+            		<td><input type="checkbox"  required><b>I agree to  the terms & conditions.</b></td>
+            	</tr><br><br>
+            	<tr>
+            		<td></td><td><input type="reset" name="c" value="Clear" class="button">
+      			<input type="submit" name="s" value="Submit"id="submit" class="button"></td>
+      		</tr>
+      	</table>
+      	</form>
+ 		<p align="center">Click hear to <a href="exlogin.html"> Register</a></p>
+      	</div>
+	</center>
+	<script type="text/javascript">
+		var c=document.getElementById("s");
+		c.addEventListener('onclick',sp);
+		c.addEventListener('onclick',cb);
+		var k=document.getElementById("frist");
+		k.addEventListener('keyup',display);
+	</script>
+ </body>
+</html>
